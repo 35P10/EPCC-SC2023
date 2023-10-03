@@ -55,7 +55,8 @@ function Navbar2() {
           <a href="#ubicacion" className="font-poppins" onClick={showNavbar}>
             Ubicación
           </a>
-          <a href="" target="blank"  className="font-poppins" id="btn-inscripcion" onClick={showNavbar}>
+          <a href="https://lamport.csunsa.tech/register" 
+          target="blank"  className="font-poppins" id="btn-inscripcion" onClick={showNavbar}>
             Inscríbete
           </a>
           <button

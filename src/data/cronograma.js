@@ -10,7 +10,7 @@ export const data_color_label_event = {
   
 export const data_actividades = [
 {
-    fecha: '09-10',
+    fecha: '09 oct.',
     eventos: [
     {
         hora: '08:45 - 9:30',
@@ -92,7 +92,7 @@ export const data_actividades = [
     ],
 },
 {
-    fecha: '10-10',
+    fecha: '10 oct.',
     eventos: [
     {
         hora: '9:30 - 10:30',
@@ -150,7 +150,7 @@ export const data_actividades = [
     ],
 },
 {
-    fecha: '11-10',
+    fecha: '11 oct.',
     eventos: [
     {
         hora: '9:30 - 10:30',
@@ -207,7 +207,7 @@ export const data_actividades = [
     ],
 },
 {
-    fecha: '12-10',
+    fecha: '12 oct.',
     eventos: [
 
     {
@@ -274,7 +274,7 @@ export const data_actividades = [
     ],
 },
 {
-    fecha: '13-10',
+    fecha: '13 oct.',
     eventos: [
     {
         hora: '9:30 - 10:30',
