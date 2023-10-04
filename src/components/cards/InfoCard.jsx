@@ -1,9 +1,10 @@
-import { features,socialMedia  } from "../../constants";
+import { features  } from "../../constants";
 import styles from "../../style";
 import {BsCode} from 'react-icons/bs';
+import "../../css/infocards.css";
 
 const InfoCard = ({ contentComponent: MyIcon, title, content, index }) => (
-    <section id = "card_container" className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
+    <section id = "card_container" className={`hover:bg-myBlue2 transition-all duration-1000 ease-in-out flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
       <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
         {
           MyIcon ? <MyIcon /> : <BsCode className="featuredCard-icon"/>
