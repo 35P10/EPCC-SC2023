@@ -43,7 +43,7 @@ export const About = () => {
             </a>
           </div>
         </div>
-        <div className={_styles.container_right} id="targets">
+        <div className={_styles.container_right}>
           {features.map((feature, index) => (
             <InfoCard key={feature.id} {...feature} index={index} />
           ))}
