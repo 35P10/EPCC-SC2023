@@ -147,8 +147,8 @@
 }
 
 :root {
-  --primary: #edd819;
-  --white: #edd819;
+  --primary: #7FFF00;
+  --white: rgba(0, 0, 0, 0.30);
   --bg: #f5f5f5;
 }
 
@@ -283,11 +283,12 @@ body {
 
 .slider-controler .slider-arrow ion-icon {
   font-size: 2rem;
-  color: #222224;
+  color: #ededf1;
 }
 
 .slider-controler .slider-arrow::after {
-  content: '';
+  font-size: 1.5rem;
+  color: #7FFF00;
 }
 
 .swiper-pagination {

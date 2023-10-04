@@ -1,76 +1,56 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import _styles from "../styles/ponente.module.scss";
-import "../css/ponentes.css";
-
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
-
-import wilber from "../assets/wilber-ramos.jpg";
+import { ponentes } from "../constants";
+import styles from "../styles/ponente.module.scss";
+import Ponente from "./Ponente";
+import React, { useState } from "react";
 
 function Ponentes() {
-  return (
-    <section id="organizacion" className={_styles.ponente}>
-      <h2>Ponentes</h2>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
-      >
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wilber} alt="slide_image" />
-        </SwiperSlide>
+  const [visible, setVisible] = useState(4);
+  const [showButton, setShowButton] = useState(true);
 
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
+  const showMoreItems = () => {
+    const newVisible = visible + 4;
+    if (newVisible >= ponentes.length) {
+      // Mostrar todos los elementos y ocultar el botón "Conocer Más"
+      setVisible(ponentes.length);
+      setShowButton(false);
+    } else {
+      // Mostrar 4 elementos adicionales
+      setVisible(newVisible);
+    }
+  };
+
+  const hideItems = () => {
+    // Mostrar solo los primeros 4 elementos y mostrar el botón "Conocer Más"
+    setVisible(4);
+    setShowButton(true);
+  };
+
+  return (
+    <section className={`${styles.pcontainer}`}>
+      <h2>Ponentes</h2>
+      <div className={`${styles.container}`}>
+        {ponentes.slice(0, visible).map((ponente) => (
+          <div className={`${styles.ponente}`} key={ponente.id}>
+            <Ponente
+              id={ponente.id}
+              name={ponente.name}
+              img={ponente.img}
+              titulo={ponente.titulo}
+              insti={ponente.insti}
+              bio={ponente.bio}
+            />
           </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div className="swiper-pagination"></div>
-        </div>
-      </Swiper>
+        ))}
+      </div>
+      {showButton ? (
+        <button className={`${styles.boton}`} onClick={showMoreItems}>
+          Conocer Más
+        </button>
+      ) : (
+        <button className={`${styles.boton}`} onClick={hideItems}>
+          Ocultar
+        </button>
+      )}
     </section>
   );
 }

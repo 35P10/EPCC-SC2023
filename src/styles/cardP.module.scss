@@ -1,0 +1,107 @@
+@import "./Utils/constants.scss";
+@import "./utils/layouts";
+@import "./utils/blocks";
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para alinear elementos verticalmente */
+    height: 100%; /* Ocupar toda la altura de la tarjeta */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    .image_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+        position: relative;
+        padding: 25px 0;
+        .card_image {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            padding: 3px;
+            .card_img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+    }
+    .card_content {
+        width: 100%;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .names {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            .name {
+                color: map-get($colors, secundario);
+                font-size: 1vw;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .insti {
+                color: map-get($colors, secundario);
+                font-size: 0.8vw;
+                padding-bottom: 1.5vw;
+            }
+            .social {
+                height: 2rem;
+                width: 2rem;
+                object-fit: cover;
+            }
+        }
+        .titulo {
+            color: $font-color-light;
+            font-size: 0.7vw;
+            margin-top: 10px;
+        }
+        .read_more {
+            position: relative;
+            z-index: 2;
+            color: map-get($colors, secundario);
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 1vw;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+        .read_more:hover {
+            background-color: map-get($colors, secundario);
+            color: $font-color-light;
+        }
+    }
+}
+
+p.bio {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: map-get($background, fondo_gradiente);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    text-align: justify;
+    font-size: 0.5vw;
+}
+
+p.showBio {
+    font-size: 0.5vw;
+    display: block;
+}

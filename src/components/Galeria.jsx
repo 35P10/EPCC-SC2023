@@ -39,7 +39,7 @@ const Galeria = () => {
               <div className="row">
                   <div className="col-12">
                       <div className="skill-bx wow zoomIn">
-                          <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                          <Carousel /*showDots={true}*/ responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item relative h-[260px] group overflow-hidden">
                                 <img src={img1} className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-20"/>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">

@@ -23,6 +23,7 @@ const App = () => (
     <About />
     <Activities />
     <Cronograma _actividades={data_actividades} _color_label_event={data_color_label_event} />
+    <Ponentes />
     <Galeria />
     <CTA />
     <Sponsor />

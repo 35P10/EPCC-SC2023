@@ -28,6 +28,7 @@ import logoeditado1 from "./editar.png";
 import nvidia from "./NVIDIA_gris.png"
 import paulonia from "./paulonia_gris.png"
 import ravn from "./RAVN_gris.svg"
+import wilber from "./ponentes/wilber-ramos.jpg"
 
 export {
   airbnb,
@@ -60,4 +61,5 @@ export {
   nvidia,
   paulonia,
   ravn,
+  wilber,
 };
