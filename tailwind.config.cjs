@@ -23,6 +23,7 @@ module.exports = {
         myMagenta: '#D80073',
         myBlue: '#1BA1E2',
         myRed2: '#E51400',
+        myBlue2: '00007a'
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

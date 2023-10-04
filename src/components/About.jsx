@@ -10,6 +10,7 @@ import {
 
 import _styles from "../styles/about.module.scss";
 import InfoCard from "./cards/InfoCard";
+import "../css/infocards.css";
 
 export const About = () => {
   return (
@@ -42,7 +43,7 @@ export const About = () => {
             </a>
           </div>
         </div>
-        <div className={_styles.container_right}>
+        <div className={_styles.container_right} id="targets">
           {features.map((feature, index) => (
             <InfoCard key={feature.id} {...feature} index={index} />
           ))}

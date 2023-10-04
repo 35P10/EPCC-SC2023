@@ -20,6 +20,7 @@
 	border-radius: 8px;
 	color: #2a376d;
 	font-weight: 500;
+	animation: highlight-border 1s infinite, scale-up 1.5s infinite;
 }
 
 #btn-inscripcion:hover {
@@ -27,6 +28,10 @@
 	color: #73ff32;
 	border: 1px solid #73ff32;
 	transition: 0.4s;
+}
+
+#btn-inscripcion-responsive {
+	display: none;
 }
 
 :root {
@@ -92,9 +97,37 @@ nav {
 	align-items: center;
 }
 
+
+@keyframes highlight-border {
+	0% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #eeeeee;
+	}
+	100% {
+		border-color: transparent;
+	}
+}
+
+@keyframes scale-up {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.1);
+	}
+	100% {
+	  transform: scale(1);
+	}
+}
+
 @media only screen and (min-width: 300px) and (max-width: 600px) {
 	header {
 		padding: 0 2rem;
+	}
+	#btn-inscripcion-responsive{
+		width: 120px;
 	}
 }
 
@@ -144,5 +177,35 @@ nav {
 
 	header .third-element{
 		display: inline;
+	}
+
+	#btn-inscripcion-responsive {
+		display: flex;
+		font-size: 1.8vh;
+		background-color: #73ff32;
+		text-align: center;
+		margin-left: 5px;
+		margin-right: 8px;
+		padding: 4px 20px;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid transparent;
+		border-radius: 8px;
+		color: #111b44;
+		font-weight: 500;
+		animation: highlight-border 1s infinite, scale-up 1.5s infinite;
+	}
+
+	nav.responsive_nav{
+		z-index: 1;
+	}
+}
+
+@media screen and (min-width: 280px) and (max-width: 340px) {
+	#btn-inscripcion-responsive {
+		font-size: 1.6vh;
+		padding: 2px 4px;
+		margin: 0px 6px 0px 0px;
+		border-radius: 6px;
 	}
 }

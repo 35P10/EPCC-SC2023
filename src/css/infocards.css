@@ -1,0 +1,61 @@
+@keyframes highlight-border {
+	0% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #eeeeee;
+	}
+	100% {
+		border-color: transparent;
+	}
+}
+
+@keyframes scale-up {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.1); /* Puedes ajustar el valor según tus preferencias */
+	}
+	100% {
+	  transform: scale(1);
+	}
+}
+
+@keyframes change-background-color {
+    0% {
+      background-color: #111b44; /* Color original de fondo */
+    }
+    50% {
+      background-color: #435388; /* Nuevo color de fondo al 50% de la animación */
+    }
+    100% {
+      background-color: #111b44; /* Restaurar el color original de fondo */
+    }
+}
+@keyframes animacionCascada {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+#targets section {
+    animation: animacionCascada 1s infinite;
+}
+
+#targets section:nth-child(1){
+    animation: change-background-color 4s infinite;
+}
+
+#targets section:nth-child(2){
+    animation: change-background-color 4s infinite;
+}
+
+#targets section:nth-child(3){
+    animation: change-background-color 5s infinite;
+}

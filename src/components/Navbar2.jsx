@@ -66,6 +66,15 @@ function Navbar2() {
             <FaTimes />
           </button>
         </nav>
+        
+        <a 
+          href="https://lamport.csunsa.tech/register" 
+          target="blank"  
+          className="font-poppins nav-btn third-element showToggle" 
+          id="btn-inscripcion-responsive">
+          Inscríbete
+        </a>
+        
         <button
           className="nav-btn third-element showToggle"
           onClick={showNavbar}
